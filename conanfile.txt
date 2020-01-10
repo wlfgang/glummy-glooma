@@ -1,0 +1,14 @@
+[requires]
+opencv/4.1.1@conan/stable
+ffmpeg/4.2@bincrafters/stable
+
+[options]
+opencv:shared=True
+opencv:ffmpeg=True
+ffmpeg:shared=True
+ffmpeg:vaapi=False
+ffmpeg:x264=False
+ffmpeg:x265=False
+
+[generators]
+cmake
