@@ -1,6 +1,6 @@
 [requires]
 opencv/4.1.1@conan/stable
-ffmpeg/4.2@bincrafters/stable
+ffmpeg/4.2.1@bincrafters/stable
 
 [options]
 opencv:shared=True
