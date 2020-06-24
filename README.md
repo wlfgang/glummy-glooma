@@ -29,8 +29,11 @@ $ cmake ..
 $ cmake --build . --config Release
 ```
 
+(Depending on the library packages installed on your system, you may want to instead specify
+`--build missing` to build other libraries from source, e.g., libtiff.)
+
 After building the first time, the FFmpeg and OpenCV binaries will be in your local conan cache, so 
-you can leave off the `--build ffmpeg` and `--build opencv` arguments and building should be fast.
+you can leave off the `--build <???>` arguments and building should be fast.
 
 ## Running
 
@@ -45,14 +48,15 @@ to prove reading was successful.
 
 ## Note on FFmpeg
 
-At least on my system (Ubuntu 19.10), I had to set the following FFmpeg options in conanfile.txt 
-in order to avoid link errors. Other combinations are of course possible, and may in fact be 
+At least on my system (Ubuntu 20.04), I had to set the following FFmpeg options in conanfile.txt 
+in order to avoid build errors. Other combinations are of course possible, and may in fact be 
 required on a different platform, YMMV.
 ```
 ffmpeg:shared=True
 ffmpeg:vaapi=False
 ffmpeg:x264=False
 ffmpeg:x265=False
+ffmpeg:openjpeg=False
 ```
 
 Because these options are non-default, the pre-built binaries on bincrafters are not suitable, hence

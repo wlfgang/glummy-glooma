@@ -9,6 +9,7 @@ ffmpeg:shared=True
 ffmpeg:vaapi=False
 ffmpeg:x264=False
 ffmpeg:x265=False
+ffmpeg:openjpeg=False
 
 [generators]
 cmake
